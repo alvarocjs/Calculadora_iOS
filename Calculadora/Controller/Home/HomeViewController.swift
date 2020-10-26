@@ -146,25 +146,33 @@ final class HomeViewController: UIViewController {
         sender.bounce()
     }
     @IBAction func operatorAdditionAction(_ sender: UIButton) {
-        result()
+        if operation != .none {
+            result()
+        }
         operating = true
         operation = .addiction
         sender.bounce()
     }
     @IBAction func operatorSubstractionAction(_ sender: UIButton) {
-        result()
+        if operation != .none {
+            result()
+        }
         operating = true
         operation = .substraction
         sender.bounce()
     }
     @IBAction func operatorMultiplicationAction(_ sender: UIButton) {
-        result()
+        if operation != .none {
+            result()
+        }
         operating = true
         operation = .multiplication
         sender.bounce()
     }
     @IBAction func operatorDivisionAction(_ sender: UIButton) {
-        result()
+        if operation != .none {
+            result()
+        }
         operating = true
         operation = .division
         sender.bounce()
@@ -259,6 +267,8 @@ final class HomeViewController: UIViewController {
             resultLabel.text = printFormatter.string(from: NSNumber(value: total))
         }
         
+        operation = .none
         print("Total: \(total)")
     }
+    
 }
